@@ -4,7 +4,8 @@ Aplicação fullstack que exibe os **resultados da Champions League 2025/26**, d
 
 | Tema claro | Tema escuro |
 |---|---|
-| ![Tela de resultados no tema claro](docs/tela-claro.png) | ![Tela de resultados no tema escuro](docs/tela-escuro.png) |
+| ![Placar da final no tema claro](docs/placar-claro.png) | ![Placar da final no tema escuro](docs/placar-escuro.png) |
+| ![Campanha do time e classificação no tema claro](docs/campanha-claro.png) | ![Campanha do time e classificação no tema escuro](docs/campanha-escuro.png) |
 
 ---
 
