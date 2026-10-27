@@ -1,10 +1,10 @@
 import "./App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Champions from "./champions/Champions";
 
 function App() {
   const [people, setPeople] = useState([]);
-  const [jogos, setJogos] = useState([]);
 
   useEffect(() => {
     const path = window.location.pathname
@@ -17,17 +17,6 @@ function App() {
       })
       .catch((error) => {
         console.error("Erro ao buscar dados da api01:", error);
-      });
-    }
-
-    if (path === "/api02"){
-    axios
-      .get("/api02")
-      .then((res) => {
-        setJogos(res.data);
-      })
-      .catch((error) => {
-        console.error("Erro ao buscar dados da api02:", error);
       });
     }
   }, []);
@@ -46,52 +35,8 @@ function App() {
     );
   }
 
-    if(window.location.pathname === "/api02") {
-      return (
-      <div className="container">
-        <h1 className="titulo">RESULTADOS DOS JOGOS</h1>
-
-        {jogos.map((jogo, index) => (
-          <div className="card-jogo" key={index}>
-            <div className="info-data">
-              <p>{jogo.data}</p>
-              <p>{jogo.hora}</p>
-            </div>
-
-            <div className="info-times">
-              <div className="time">
-                <img
-                  src={jogo.escudo_mandante}
-                  alt={jogo.mandante}
-                  className="escudo"
-                />
-                <span>{jogo.mandante}</span>
-              </div>
-
-              <div className="placar">
-                <span className="gol">{jogo.gols_mandante}</span>
-                <span className="separador">x</span>
-                <span className="gol">{jogo.gols_visitante}</span>
-              </div>
-
-              <div className="time">
-                <img
-                  src={jogo.escudo_visitante}
-                  alt={jogo.visitante}
-                  className="escudo"
-                />
-                <span>{jogo.visitante}</span>
-              </div>
-            </div>
-
-            <div className="info-extra">
-              <p className="vencedor"><strong>Vencedor:</strong> {jogo.vencedor}</p>
-              <span className="status">{jogo.status}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-    );
+  if(window.location.pathname === "/api02") {
+    return <Champions />;
   }
 }
 export default App;
