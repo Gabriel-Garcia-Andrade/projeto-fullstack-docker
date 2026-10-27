@@ -53,7 +53,9 @@ function LadoDoPlacar({ time, posicao, perdeu, aoEscolherTime }) {
     >
       <Escudo time={time} tamanho="g" />
       <span className="placa__sigla">{time.sigla}</span>
-      <span className="placa__nome">{time.curto}</span>
+      <span className="placa__nome">
+        {time.curto !== time.sigla ? time.curto : time.nome}
+      </span>
     </button>
   );
 }
